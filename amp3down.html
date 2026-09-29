@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.webcindario.com https://*.googleapis.com https://*.gstatic.com https://www.googletagmanager.com https://analytics.google.com/ https://*.google.com/recaptcha 'unsafe-inline'; frame-src https://*.google.com; img-src * data: blob:; media-src * data: blob:">
+    <title>AudioMicro mp3 Download - DragShot Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A script which adds a direct link for song entries in AudioMicro.com, so the preview can be downloaded without need of logging in.">
+    <meta name="author" content="DragShot">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="dragshot, software, ds, js, javascript, userscript">
+    <meta property="og:title" content="AudioMicro mp3 Download - DragShot Software">
+    <meta property="og:description" content="A script which adds a direct link for song entries in AudioMicro.com, so the preview can be downloaded without need of logging in.">
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:url" content="https://dragshot.webcindario.com/software/amp3down.html">
+    <meta property="og:site_name" content="DragShot Software">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dragshot.webcindario.com/software/img/showcase/amp3down.png">
+    <meta property="og:image:type" content="image/img/showcase/amp3down.png">
+    <meta property="og:image:width" content="560">
+    <meta property="og:image:height" content="280">
+    <meta property="twitter:domain" content="dragshot.webcindario.com">
+    <meta property="twitter:url" content="https://dragshot.webcindario.com/software/amp3down.html">
+    <meta name="twitter:title" content="AudioMicro mp3 Download - DragShot Software">
+    <meta name="twitter:description" content="A script which adds a direct link for song entries in AudioMicro.com, so the preview can be downloaded without need of logging in.">
+    <meta name="twitter:image" content="https://dragshot.webcindario.com/software/img/showcase/amp3down.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!--<link rel="icon" href="favicon.ico">-->
+    <link rel="icon" sizes="16x16" href="favicon/fav16.png" type="image/png">
+    <link rel="icon" sizes="24x24" href="favicon/fav24.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="favicon/fav32.png" type="image/png">
+    <link rel="icon" sizes="48x48" href="favicon/fav48.png" type="image/png">
+    <link rel="icon" sizes="64x64" href="favicon/fav64.png" type="image/png">
+    <link rel="shortcut icon" href="favicon/fav64.png" type="image/png">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img class="ds-logo" src="img/logo.png" alt="DragShot Software"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown active">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apps <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Nfm-related apps</li>
+                <li><a href="dsmod.html">Nfm2 - DSmod</a></li>
+                <li><a href="addons.html">NfmM DS-addons pack</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">FNFunkin' Mods</li>
+                <li><a href="fnfselever.html">Vs Selever (fanmade)</a></li>
+                <li><a href="fnfunkguys.html">Funk Guys Demo</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">More apps</li>
+                <li><a href="modplayer.html">NfmM MOD Player</a></li>
+                <li><a href="dsnap.html">DS Snap Maker</a></li>
+                <li><a href="imgvisor.html">DS Image Visor</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Libraries & Frameworks <span class="label label-success">NEW!</span></li>
+                <li><a href="psychxt.html">Psych Engine XTended</a></li>
+                <li><a href="desktopnotify.html">DS Desktop Notify</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">User Scripts</li>
+                <li><a href="discordcs.html">Discord Classic Style</a></li>
+                <li><a href="fftoggle.html">FanFiction Doc Toggle Lights</a></li>
+                <li class="active"><a href="amp3down.html">AudioMicro mp3 Download</a></li>
+                <li><a href="tumblrmp3.html">Tumblr mp3 Download</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container container-black">
+      <div class="margin-bottom-10"></div>
+      <div class="row">
+        <div class="col-md-6 margin-bottom-10">
+          <img class="btn-block margin-auto" src="img/showcase/amp3down.png" alt="amp3down.png">
+        </div>
+        <div class="col-md-6 margin-bottom-10 software-holder">
+          <div class="software-desc">
+            <h2><b>AudioMicro Direct mp3 Download</b>
+              <div class="pull-right" style="margin-top: -5px;">
+                <span class="label label-success" style="font-size: 18px;"><i class="fa fa-globe"></i></span>
+              </div>
+            </h2>
+            <p>A script which allows to download free songs from AudioMicro.com without need of logging in.</p>
+            <div class="margin-bottom-15">
+              <p><b>Type:</b> User script<br/>
+              <b>License:</b> <a class="ds-link" href="http://opensource.org/licenses/LGPL-3.0" target="_blank">GNU Lesser General Public License 3.0</a><br/>
+              <b>Version:</b> 1.1<br/></p>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-xxs-12 sm-margin-bottom-10">
+                <a class="btn btn-lg btn-block btn-success" href="https://openuserjs.org/scripts/TheDragShot/AudioMicro_Direct_mp3_Download">
+                  <i class="fa fa-download"></i>&nbsp;&nbsp;Install script
+                </a>
+              </div>
+              <div class="col-xs-6 col-xxs-12 sm-margin-bottom-10">
+                <a class="btn btn-lg btn-block btn-primary" href="https://openuserjs.org/scripts/TheDragShot/AudioMicro_Direct_mp3_Download/source">
+                  <i class="fa fa-code"></i>&nbsp;&nbsp;Get source
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container container-gray gray-band">
+      <div class="row margin-bottom-20">
+        <div class="col-md-8 text-justify">
+          <div class="margin-bottom-20">
+            <h3>AudioMicro Direct mp3 Download</h3>
+            <p><i class="fa fa-calendar"></i> <b>Last updated:</b> June 30th, 2015</p>
+            <p><i class="fa fa-tags"></i> <span class="label label-success">JavaScript</span> <span class="label label-success">userscripts</span> <span class="label label-success">utils</span> <span class="label label-default">inactive</span></p>
+            <p>This small script adds a button next to each song entry under the free-music and artist sections of http://www.audiomicro.com. Using this alternative link you can simply right click it and save the .mp3 file it links to. It's the same file opened internally by the embedded player.</p>
+            <p>Simply install this script and it will do its job right after the page load its main contents. No special GM permissions are required so far.</p>
+          </div>
+          <div class="top-line margin-bottom-20">
+            <h3>Being developed</h3>
+            <ul>
+              <li>The ability of downloading music which doesn't provide a try-me link.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="top-line visible-sm-block visible-xs-block margin-bottom-0"></div>
+          <div class="margin-bottom-20">
+            <h3>Features</h3>
+            <ul>
+              <li>Automatic script execution and updating.</li>
+              <li>It works for the Royalty Free Music and Artist sections.</li>
+              <li>The link has the shape of a button and can be easily spotted.</li>
+            </ul>
+          </div>
+          <div class="top-line margin-bottom-20">
+            <h3>Requirements</h3>
+            <ul>
+              <li>Mozilla Firefox or Google Chrome. Recent versions are recommended.</li>
+              <li>Greasemonkey plug-in for Firefox, or Tampermonkey for Chrome.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer footbar-inverse">
+      <div class="container">
+        <div class="row footbar-content">
+          <div class="col-sm-6 margin-bottom-10">
+            <div class="margin-bottom-10"><b>About Downloadable Content</b></div>
+            Most contents in this subsite are published under terms of the
+            <a class="ds-link" href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons BY-SA license</a>, at least everything made by me. Also, any applications with download links provided here are covered under a <a class="ds-link" href="default_lic.html" target="_blank">default license</a>, unless otherwise stated.
+          </div>
+          <div class="col-sm-6 text-center">
+            Copyright © 2026 <a class="ds-link" href="https://dragshot.webcindario.com/software">DragShot Software</a> at <a class="ds-link" href="https://dragshot.webcindario.com/" target="_blank">DragShot Core</a><br/>Created with <a class="ds-link" href="https://jquery.com/" target="_blank">jQuery</a> and <a class="ds-link" href="https://getbootstrap.com" target="_blank">Bootstrap</a>.
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>
